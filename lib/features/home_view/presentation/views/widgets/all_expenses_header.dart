@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:full_responsive_adaptive_ui_project/core/utils/app_colors.dart';
 import 'package:full_responsive_adaptive_ui_project/core/utils/app_styles.dart';
 
-class AllExpensesHeader extends StatelessWidget {
-  const AllExpensesHeader({
+class CustomDropDownHeader extends StatelessWidget {
+  final String title;
+  const CustomDropDownHeader({
     super.key,
+    required this.title,
   });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Text("All Expenses", style: AppStyles.styleSemiBold20(context)),
+        Text(title, style: AppStyles.styleSemiBold20(context)),
         const Spacer(),
         Container(
           padding: const EdgeInsets.all(10),

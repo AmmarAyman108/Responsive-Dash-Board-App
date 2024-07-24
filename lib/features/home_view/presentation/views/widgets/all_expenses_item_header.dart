@@ -5,7 +5,12 @@ import 'package:full_responsive_adaptive_ui_project/features/home_view/data/mode
 
 class AllExpensesItemHeader extends StatelessWidget {
   final AllExpansesItemModel itemModel;
-  const AllExpensesItemHeader({super.key, required this.itemModel});
+  final Color? imageColor, backgroundColor,iconColor;
+  const AllExpensesItemHeader(
+      {super.key,
+      required this.itemModel,
+       this.imageColor,
+       this.backgroundColor, this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -17,15 +22,19 @@ class AllExpensesItemHeader extends StatelessWidget {
           height: 60,
           child: CircleAvatar(
             radius: 30,
-            backgroundColor: AppColors.grayColor,
-            child: SvgPicture.asset(itemModel.image),
+            backgroundColor: backgroundColor ?? AppColors.grayColor,
+            child: SvgPicture.asset(
+              itemModel.image,
+              colorFilter: ColorFilter.mode(
+                  imageColor ?? AppColors.blueColor, BlendMode.srcIn),
+            ),
           ),
         ),
         Transform.rotate(
           angle: 2 * -1.5709633,
-          child: const Icon(
+          child:  Icon(
             Icons.arrow_back_ios,
-            color: AppColors.primaryColor,
+            color:iconColor?? AppColors.primaryColor,
           ),
         )
       ],

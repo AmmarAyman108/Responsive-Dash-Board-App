@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:full_responsive_adaptive_ui_project/core/utils/app_assets.dart';
 import 'package:full_responsive_adaptive_ui_project/core/utils/app_colors.dart';
 import 'package:full_responsive_adaptive_ui_project/features/home_view/data/models/drawer_item_model.dart';
+import 'package:full_responsive_adaptive_ui_project/features/home_view/data/models/user_info_model.dart';
 import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/active_and_inactive_item.dart';
 import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/drawer_item_list_view.dart';
 import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/user_info_list_tile.dart';
@@ -22,12 +23,13 @@ class CustomDrawer extends StatelessWidget {
               height: 10,
             ),
           ),
-          const SliverToBoxAdapter(
+          SliverToBoxAdapter(
             child: UserInfoListTile(
+                userInfo: UserInfoModel(
               leadingImage: AppAssets.imagesAvatar3,
-              subtitle: "lekon@gmail.com",
-              title: "Lekon Okeowo",
-            ),
+              title: 'Lekon Okeowo',
+              subtitle: ' lekon@gmail.com',
+            )),
           ),
           const SliverToBoxAdapter(
             child: SizedBox(

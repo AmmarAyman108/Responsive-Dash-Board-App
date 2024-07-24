@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/all_expenses.dart';
+import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/all_expenses_and_quick_invoice_section.dart';
+import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/card_and_income_section.dart';
 import 'package:full_responsive_adaptive_ui_project/features/home_view/presentation/views/widgets/custom_drawer.dart';
 
 class DesktopLayout extends StatelessWidget {
@@ -9,10 +10,10 @@ class DesktopLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Row(
         children: [
-          const Expanded(
+          Expanded(
             flex: 1,
             child: CustomDrawer(),
           ),
@@ -21,11 +22,14 @@ class DesktopLayout extends StatelessWidget {
           ),
           Expanded(
             flex: 3,
-            child: AllExpenses(),
+            child: AllExpensesAndQuickInvoiceSection(),
+          ),
+          SizedBox(
+            width: 24,
           ),
           Expanded(
             flex: 2,
-            child: Container(),
+            child: CardAndIncomeSection(),
           ),
         ],
       ),
